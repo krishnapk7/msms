@@ -1,0 +1,12 @@
+[
+    {
+        "model": "lessons.transfer",
+        "pk": 1,
+        "fields": {
+            "amount": 100.00,
+            "user_id": 2,
+            "lesson_id": 3,
+            "school_id": 1
+        }
+    }
+]

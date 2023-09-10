@@ -1,0 +1,16 @@
+{% extends 'base/school_base.html' %}
+{% block head %}<title>Request Lesson - Kangaroo Music</title>{% endblock %}
+{% block school_body %}
+    <div class="container">
+        <div class="row justify-content-center mt-5 mb-5">
+            <div class="col-lg-5">
+              <div class="card shadow">
+                <div class="card-title text-center border-bottom">
+                  <h2 class="p-3"><b>REQUEST A LESSON</b></h2>
+                </div>
+                    {% include 'partials/form.html' with form=form %}
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

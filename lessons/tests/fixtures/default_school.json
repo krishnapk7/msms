@@ -1,0 +1,11 @@
+[
+    {
+        "model": "lessons.School",
+        "pk": 1,
+        "fields": {
+            "name": "Test School",
+            "description": "Hello, World!",
+            "director": 1
+        }
+    }
+]

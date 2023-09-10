@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block head %}<title>Log In - Kangaroo Music</title>{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-lg-15 col-md-6 col-sm-6">
+                <div class="card shadow">
+                    <div class="card-title text-center border-bottom">
+                        <h2 class="p-3"><b>LOGIN</b></h2>
+                    </div>
+
+                    {% include 'partials/form.html' with form=form %}
+
+                    <div class="card-footer border-0 bg-light d-flex py-3 justify-content-center">
+                        Don't have an account?&nbsp;<a href="{% url 'register' %}"><b>Register</b></a>&nbsp;one!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

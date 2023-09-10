@@ -1,0 +1,34 @@
+<div class="list-group px-5 pb-3">
+
+    <a class="list-group-item list-group-item-action disabled"><b>{{ school.name }}</b></a>
+    <a href="{% url 'school_home' school.id %}" class="list-group-item list-group-item-action">Home</a>
+
+    {% for group in school_user_groups %}
+
+        {% if group.name == 'Client' %}
+            <a href="{% url 'client_lessons' school.id %}" class="list-group-item list-group-item-action">Lessons</a>
+            <a href="{% url 'timetable' school.id %}" class="list-group-item list-group-item-action">Timetable</a>
+            <a href="{% url 'client_transactions' school.id %}" class="list-group-item list-group-item-action">Transactions</a>
+        {% endif %}
+
+        {% if group.name == 'Teacher' %}
+            <a href="{% url 'teacher_timetable' school.id %}" class="list-group-item list-group-item-action">Timetable</a>
+        {% endif %}
+
+        {% if group.name == 'Administrator' %}
+            <a href="{% url 'school_bookings' school.id %}" class="list-group-item list-group-item-action">Bookings</a>
+            <a href="{% url 'school_transfers' school.id %}" class="list-group-item list-group-item-action">Transfers</a>
+            <a href="{% url 'terms' school.id %}" class="list-group-item list-group-item-action">Terms</a>
+        {% endif %}
+
+        {% if group.name == 'Super-administrator' %}
+            <a href="{% url 'members' school.id %}" class="list-group-item list-group-item-action">Members</a>
+        {% endif %}
+
+        {% if group.name == 'Director' %}
+            <a href="{% url 'manage_school' school.id %}" class="list-group-item list-group-item-action">Manage School</a>
+        {% endif %}
+
+    {% endfor %}
+
+</div>

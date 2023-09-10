@@ -1,0 +1,30 @@
+<div class="card-body">
+
+    {% for message in messages %}
+        <p style="color: red;">
+            <b>{{ message }}</b>
+        </p>
+    {% endfor %}
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+            <div class="mb-4">
+                <label class="form-label">{{ field.label }}</label>
+                {% for error in field.errors %}
+                    <p style="color: red;">
+                        <strong>{{ error }}</strong>
+                    </p>
+                {% endfor %}
+                {{ field }}
+                <p class="help-text">{{ field.help_text }} </p>
+            </div>
+        {% endfor %}
+
+        <div class="d-grid">
+            <input type="submit" value="✓" class="btn btn-success">
+        </div>
+
+    </form>
+</div>
